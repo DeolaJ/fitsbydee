@@ -1,0 +1,45 @@
+{
+  "name": "fitsbydee",
+  "version": "1.0.0",
+  "description": "A landing page for Fits By Dee",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeolaJ/fitsbydee.git"
+  },
+  "keywords": [
+    "fitsbydee",
+    "fashion",
+    "men",
+    "women",
+    "youth",
+    "nigeria",
+    "lagos",
+    "markethub",
+    "deemarkethub",
+    "deemarkethub",
+    "damola",
+    "adeola"
+  ],
+  "engines":{
+    "node": "6.11.2" ,
+    "npm": "3.10.10"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Adeola Adeyemo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DeolaJ/fitsbydee/issues"
+  },
+  "homepage": "https://github.com/DeolaJ/fitsbydee#readme"
+}
