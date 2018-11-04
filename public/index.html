@@ -3,137 +3,445 @@
 <head>
 	<meta charset="utf-8">
 	<title>
-		FitsByDee Webpage
+		Fits By Dee
 	</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="FBD project">  
     <meta name="Adeola" content="author">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 	<style>
 		@import url("font-awesome/css/font-awesome.min.css");
 
 		body {
-			background-color: rgb(43, 50, 88);
+			font-family: 'Raleway', sans-serif;
 		}
 
-		.first_content, .second_content, .third_content {
-			height: 100vh;
-			color: white;
+		header {
+			padding: 30px;
+			position: absolute;
+			width: 100%;
+		}
+
+		header nav {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		nav a {
+			color: #1f1f1f;
+			font-weight: bold;
+			font-style: italic;
+		}
+
+		h3 {
+			font-weight: bold;
+		}
+
+		.logo {
+			width: 60px;
 		}
 
 		.first_content {
-			background-color: rgb(50, 146, 48);
-			padding-top: 30px;
+			height: 100vh;
+			color: #1f1f1f;
+			padding-top: 15vh;
+		}
+
+		.first_image {
+			background-image: url(new.jpg);
+			background-size: 50vw 100vh;
+			position: absolute;
+			height: 100vh;
+			top: 0;
+			right: 0;
+			background-repeat: no-repeat;
+		}
+
+		.first_menu {
+			position: absolute;
+			bottom: -42vh;
+			width: 100%;
+			left: 0;
+			z-index: 20;
+			font-size: 13px;
+			font-weight: bold;
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+		}
+
+		.first_menu a {
+			color: #1f1f1f;
+		}
+
+		.first_content .content_box {
+			padding-top: 150px;
+		}
+
+		.content_box .list-inline-item:nth-child(1), .content_box .list-inline-item:nth-child(2), .content_box .list-inline-item:nth-child(3) {
+			border-right: 1px solid #1f1f1f;
+			padding-right: 1rem;
+			padding-left: 0.5rem;
 		}
 
 		.second_content {
-			background-color: rgb(100, 202, 98);
+			background-color: white;
+			height: 100vh;
+			color: #fbfcfb;
 		}
 
-		.third_content {
-			background-image: url('business.png');
-			background-size: cover;
+		.second_container {
+			display: flex;
+			flex-basis: 50%;
+			width: 100%;
+		}
+
+		.second_left, .second_right {
+			padding: 5vh;
+		}
+
+		.second_left {
+			height: 100vh;
+			background-color: rgb(130, 130, 130);
+			flex: 1;
+		}
+
+		.second_right {
+			height: 100vh;
+			background-color: rgb(170, 170, 170);
+			flex: 1;
+		}
+
+		.second_head {
+			position: absolute;
+			bottom: -12vh;
+			z-index: 30;
+		}
+
+		.second_head span {
+			margin-left: 10px;
+			font-size: 25px;
+		}
+
+		.second_container h4 {
+			text-align: center;
+		}
+
+		.second_post_content {
+			text-align: justify;
+			margin-top: 10vh;
 			padding: 20px;
-		}
-
-		.first_content h2, .second_content h2 {
-			color:  white;
-		}
-
-		.content_box {
-			padding-top: 25%;
 		}
 
 		.content_input_box {
 			border: none;
 			padding: 10px 10px;
 			color: rgb(43, 50, 88);
-			width: 220px;
+			width: 40vw;
 			position: relative;
 			top: 2px;
 		}
 
-		.content_button1, .content_button2:hover {
-			padding: 10px 30px;
-			background-color: rgb(77, 108, 255);
-			color: white;
-			border-radius: 0;
-			border-color: rgb(77, 108, 255);
-			font-size: 14px;
-			font-weight: bold;
+		.third_content {
+			padding-top: 30px;
+			color: #1f1f1f;
+			background-color: #fbfcfb;
 		}
 
-		.content_button1:hover, .content_button2 {
-			padding: 10px 30px;
-			background-color: rgb(53, 59, 96);
-			border: 1px solid rgb(80, 85, 117);
-			font-size: 15px;
-			font-weight: bold;
-			border-radius: 0;
+		.third_content .content_button2:hover {
 			color: white;
+		}
+
+		.third_content h2 {
+			text-align: center;
+		}
+
+		.services_content {
+			margin-top: 30px;
+			margin-bottom: 30px;
+			display: flex;
+			align-items: center;
+		}
+
+		.services_feedback {
+			padding: 20px;
+			margin-top: 40px;
 		}
 
 		.footer {
-			background: rgb(32, 39, 57);
-			padding: 10px;
-			line-height: 40px;
+			background: #1f1f1f;
+			padding: 15px;
 			color: white;
+			text-align: center;
+		}
+
+		@media screen and (min-width: 768px) {
+			.first_content {
+				background-color: rgb(230, 230, 230);
+			}
+		}
+
+		@media screen and (max-width: 768px) {
+			.first_image {
+				background-size: 100vw 100vh;
+				z-index: -3;
+				opacity: 0.5;
+			}
+
+			.first_content {
+				font-weight: bolder;
+				color: black;
+				text-align: center;
+			}
+
+			.first_menu a {
+				color: white;
+			}
+
+			.content_box .list-inline-item:nth-child(1), .content_box .list-inline-item:nth-child(2), .content_box .list-inline-item:nth-child(3) {
+				border-right: 1px solid white;
+			}
+		}
+
+		@media screen and (max-width: 576px) {
+			.service_image {
+				height: 60px;
+				padding: 10px;
+				background-color: white;
+				border-radius: 30px;
+			}
+
+			.second_head {
+				bottom: -8vh;
+			}
+
+			.second_left, .second_right {
+				padding: 5px;
+			}
+
+			.second_post_content {
+				margin-top: 10vh;
+				padding: 5px;
+			}
+
+			.third_content {
+				text-align: center;
+			}
+
+			.services_content .list-inline-item {
+				width: 100%;
+			}
+
+			.content_input_box {
+				color: rgb(43, 50, 88);
+				width: 100%;
+				margin-bottom: 10px;
+			}
+
+			.services_content:nth-child(1) {
+				order: 2;
+				margin-top: 0;
+				border: 1px solid rgb(130, 130, 130);
+				border-top: none;
+				border-radius: 2px;
+				margin-left: 10px;
+				margin-right: 10px;
+				padding-bottom: 10px;
+			}
+
+			.services_content:nth-child(2) {
+				order: 1;
+				margin-bottom: 0;
+				flex-direction: column;
+				border: 1px solid rgb(130, 130, 130);
+				border-bottom: none;
+				margin-left: 10px;
+				margin-right: 10px;
+				padding-top: 10px;
+			}
+
+			.services_content:nth-child(3) {
+				order: 3;
+				margin-bottom: 0;
+				flex-direction: column;
+				border: 1px solid rgb(130, 130, 130);
+				border-bottom: none;
+				margin-left: 10px;
+				margin-right: 10px;
+				padding-top: 10px;
+			}
+
+			.services_content:nth-child(4) {
+				order: 4;;
+				margin-top: 0;
+				border: 1px solid rgb(130, 130, 130);
+				border-top: none;
+				margin-left: 10px;
+				margin-right: 10px;
+				padding-bottom: 10px;
+			}
+
+			.services_content:nth-child(5) {
+				order: 6;;
+				margin-top: 0;
+				border: 1px solid rgb(130, 130, 130);
+				border-top: none;
+				margin-left: 10px;
+				margin-right: 10px;
+				padding-bottom: 10px;
+			}
+
+			.services_content:nth-child(6) {
+				order: 5;
+				flex-direction: column;
+				margin-bottom: 0;
+				border: 1px solid rgb(130, 130, 130);
+				border-bottom: none;
+				margin-left: 10px;
+				margin-right: 10px;
+				padding-top: 10px;
+			}
+
+			.services_content:nth-child(7) {
+				order: 7;
+			}
+
+			.content_image {
+				position: absolute;
+				z-index: -10;
+			}
+
+			.logo {
+				width: 50px;
+			}
+
+			header {
+				padding: 5px;
+			}
+
+			header span {
+				display: none;
+			}	
+
+			h3 {
+				font-size: 18px;
+			}
+
+			p {
+				font-size: 14px;
+			}
+
+			.second_container h4 {
+				font-size: 1.2rem;
+			}
+
+			.footer {
+				font-size: 12px;
+			}
 		}
 	</style>
 </head>
 <body>
-	<div class='first_content'>
-		<div class='container'>
-			<div class='row'>
-				<div class='content_box col-sm-9 col-md-7 col-lg-6'>
-					<h2>LOREM IPSUM</h2>
-					<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, cinsectetur, adipisci</p>
-					<ul class='list-inline'>
-						<li class='list-inline-item'><a href='#'><button class='btn content_button1'>CHAT WITH US</button></a></li>
-						<li class='list-inline-item'><a href='#'><button class='btn content_button2'>ABOUT US</button></a></li>
-					</ul>
-				</div>
-				<div class='col-sm-3 col-md-5 col-lg-6'>
-					<img class='img-fluid' src='man.png'>
-				</div>
-			</div>
-		</div>
-	</div>
-
-		<div class='second_content'>
-			<div clas='container'>
+	<main>
+		<header>
+			<nav>
+				<a href='#'><img class='img-fluid logo' src='lollo.png'><span>FitsByDee</span></a>
+			</nav>
+		</header>
+		<div class='first_content'>
+			<div class='container-fluid'>
 				<div class='row'>
-					<div class='col-sm-3 col-md-5 col-lg-6'>
-						<img class='img-fluid' src='woman.png'>
+					<div class='content_box col-sm-12 col-md-6'>
+						<h2>HI. WE ARE FITS BY DEE</h2>
+						<p>A fashion line with a difference. Watch this space</p>
+						<div class='first_menu'>
+							<ul class='list-inline'>
+								<li class='list-inline-item'><a href='#' class='menu_item'>CHAT</a></li>
+								<li class='list-inline-item'><a href='#' class='menu_item'>PREORDER</a></li>
+								<li class='list-inline-item'><a href='#about' class='menu_item'>ABOUT US</a></li>
+								<li class='list-inline-item'><a href='#' class='menu_item'><i class='fa fa-facebook'></i></a></li>
+								<li class='list-inline-item'><a href='#' class='menu_item'><i class='fa fa-instagram'></i></a></li>
+								<li class='list-inline-item'><a href='#' class='menu_item'><i class='fa fa-twitter'></i></a></li>
+							</ul>
+						</div>
 					</div>
-					<div class='content_box col-sm-9 col-md-7 col-lg-6'>
-						<h2>LOREM IPSUM</h2>
-						<p>We will love to add you to our customer database, and keep you updated on our weekly posts and new products</p>
-						<ul class='list-inline'>
-							<li class='list-inline-item'><input type='email' class='content_input_box' placeholder='Email address' /></li>
-							<li class='list-inline-item'><a href='#'><button class='btn content_button2'>SUBSCRIBE</button></a></li>
-						</ul>
+					<div class='col-sm-12 col-md-6 first_image'>
 					</div>
 				</div>
 			</div>
 		</div>
-<div class='third_content'>
-	<div class='row'>
-		<div class='content_box col-sm-6'>
-			<h2>ABOUT US</h2>
-			<p>We will love to add you to our customer database, and keep you updated on our weekly posts and new products</p>
-			<ul class='list-inline'>
-				<li class='list-inline-item'><input type='email' class='content_input_box' placeholder='Email address' /></li>
-				<li class='list-inline-item'><a href='#'><button class='btn content_button2'>SUBSCRIBE</button></a></li>
-			</ul>
+		<div class='second_content' id='about'>
+				<div class='second_container'>
+					<div class='second_left'>
+						<div class='second_head'>
+							<a href='#'><img class='img-fluid logo' src='logo.png'></a>
+							<span>ABOUT US</span>
+						</div>
+						<div class='second_post_content'>
+							<h4>Dee Market Hub</h4>
+							<p>We will love to add you to our customer database, and keep you updated on our weekly posts and new products. We will love to add you to our customer database, and keep you updated on our weekly posts and new products. We will love to add you to our customer database, and keep you updated on our weekly posts and new products. We will love to add you to our customer database, and keep you updated on our weekly posts and new products.</p>
+						</div>
+					</div>
+					<div class='second_right' id='second_right'>
+						<div class='second_post_content'>
+							<h4>Fits By Dee</h4>
+							<p>We will love to add you to our customer database, and keep you updated on our weekly posts and new products. We will love to add you to our customer database, and keep you updated on our weekly posts and new products. We will love to add you to our customer database, and keep you updated on our weekly posts and new products. We will love to add you to our customer database, and keep you updated on our weekly posts and new products.</p>
+						</div>
+					</div>
+				</div>
+
+		</div>		
+		<div class='third_content' id='services'>
+			<div class='container'>
+				<h2>Our Services</h2>
+				<div class='row'>
+					<div class='services_content col-sm-6'>
+						<div>
+							<h3>Get Trendy wears</h3>
+							<p>We have a wide range of t-shirt designs that will make you look stunning at any event</p>
+						</div>
+					</div>
+					<div class='services_content col-sm-6'>
+						<img class='img-fluid service_image' src='lollo.png'>
+					</div>
+					<div class='services_content col-sm-6'>
+						<img class='img-fluid service_image' src='lollo.png'>
+					</div>
+					<div class='services_content content_box col-sm-6'>
+						<div>
+							<h3>Preoders are available</h3>
+							<p>Our customers have the option to make orders before our collections are out.</p>
+						</div>
+					</div>
+					<div class='services_content content_box col-sm-6'>
+						<div>
+							<h3>Our customers are first</h3>
+							<p>We accept returns if the product is deficient. We are commited to providing quality products that are also durable.</p>
+						</div>
+					</div>
+					<div class='services_content col-sm-6'>
+						<img class='img-fluid service_image' src='lollo.png'>
+					</div>
+					<div class='services_content'>
+						<div class='col-xs-12 services_feedback'>
+							<h3>WE LOVE FEEDBACK</h3>
+							<p>We will love to add you to our customer database, and keep you updated on our weekly posts and new products</p>
+							<ul class='list-inline'>
+								<li class='list-inline-item'><input type='email' class='content_input_box' placeholder='Email address' /></li>
+								<li class='list-inline-item'><a href='#'><button class='btn'>SUBSCRIBE</button></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
-</div>
-<footer class='footer'>
-	<p>&copy; Copyright FitsByDee 2018</p>
-</footer>
-<script src='jquery.js'></script>
-<script src='js/bootstrap.js'></script>
+		<footer class='footer'>
+			<span>&copy; Copyright FitsByDee 2018</span>
+		</footer>
+	</main>
+	<script src='jquery.js'></script>
+	<script src='js/bootstrap.js'></script>
 </body>
 </html>
