@@ -8,7 +8,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="FBD project">  
     <meta name="Adeola" content="author">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="logo.png" type="image/png" />
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 	<style>
@@ -22,6 +23,7 @@
 			padding: 30px;
 			position: absolute;
 			width: 100%;
+			z-index: 10;
 		}
 
 		header nav {
@@ -78,6 +80,22 @@
 
 		.first_content .content_box {
 			padding-top: 150px;
+		}
+		
+		.content_button2 {
+			padding: 10px 30px;
+			background-color: transparent;
+			border: 2px solid #1f1f1f;
+			font-size: 15px;
+			font-weight: bold;
+			border-radius: 3px;
+			color: #1f1f1f;
+		}
+
+		.content_button2:hover {
+			background-color: #1f1f1f;
+			color: #cae3d9;
+			border: 2px solid #1f1f1f;
 		}
 
 		.content_box .list-inline-item:nth-child(1), .content_box .list-inline-item:nth-child(2), .content_box .list-inline-item:nth-child(3) {
@@ -175,6 +193,7 @@
 			padding: 15px;
 			color: white;
 			text-align: center;
+			font-size: 13px;
 		}
 
 		@media screen and (min-width: 768px) {
@@ -341,6 +360,162 @@
 				font-size: 12px;
 			}
 		}
+
+		.first_content_after {
+			position: absolute;
+			height: 100vh;
+			width: 100%;
+			top: 0;
+			left: 0;
+			color: #fff;
+			font-size: 40px;
+			padding-top: 35vh;
+			display: inline-block;
+			text-align: center;
+			background-color: #777;
+			animation: loadanimate 7s ease-out;
+			animation-fill-mode: backwards;
+			z-index: -30;
+			opacity: 0;
+		}
+
+		@keyframes loadanimate {
+			0% {
+				z-index: 200;
+				opacity: 1;
+				overflow: hidden;
+			}
+			15% {
+				background-color: #888;
+			}
+
+			25% {
+				background-color: #999;
+			}
+
+			35% {
+				background-color: #aaa;
+			}
+
+			45% {
+				background-color: #ccc;
+			}
+
+			75% {
+				background-color: #eee;
+			}
+
+			90% {
+				background-color: #cae3d9;
+				color: #1f1f1f;
+			}
+			
+			100% {
+				display: none;
+				z-index: 200;
+				opacity: 1;
+				overflow: hidden;
+			}
+		}
+
+		.first_content .content_box h2 {
+			animation: moveRight 1s ease-out;
+			animation-fill-mode: backwards;
+			animation-delay: 7s;
+		}
+
+		.first_content .content_box p {
+			animation: moveLeft 1s ease-out;
+			animation-fill-mode: backwards;
+			animation-delay: 7s;
+		}
+
+		.first_content .content_box .list-inline {
+			animation: moveUp 1s ease-out;
+			animation-fill-mode: backwards;
+			animation-delay: 8s;
+		}
+
+		@keyframes moveRight {
+			0% {
+				transform: translateX(100px);
+				opacity: 0;
+			}
+
+			80% {
+				transform: translateX(-10px);
+			}
+
+			100% {
+				transform: translate(0);
+				opacity: 1;
+			}
+		}
+
+		@keyframes moveLeft {
+			0% {
+				transform: translateX(-100px);
+				opacity: 0;
+			}
+
+			80% {
+				transform: translateX(10px);
+			}
+
+			100% {
+				transform: translate(0);
+				opacity: 1;
+			}
+		}
+
+		@keyframes moveUp {
+			0% {
+				transform: translateY(30px);
+				opacity: 0;
+			}
+
+			100% {
+				transform: translate(0);
+				opacity: 1;
+			}
+		}
+
+		.back-to-top {
+			display: inline-block;
+			text-align: center;
+			background-color: rgb(130, 130, 130);
+			color: white;
+			height: 30px;
+			width: 30px;
+			position: fixed;
+			border-radius: 50%;
+			bottom: 50px;
+			left: 50%;
+			animation: bounce 0.8s linear;
+			animation-fill-mode: backwards;
+			animation-iteration-count: infinite;
+			backface-visibility: hidden;
+		}
+
+		@keyframes bounce {
+			0% {
+				transform: translateY(-1px);
+			}
+
+			50% {
+				transform: translateY(8px);
+			}
+
+			100% {
+				transform: translate(0);
+			}
+		}
+
+		.back-to-top:hover {
+			background-color: white;
+			border: 1px solid rgb(130, 130, 130);
+			color: rgb(130, 130, 130);
+		}
 	</style>
 </head>
 <body>
@@ -360,7 +535,7 @@
 							<ul class='list-inline'>
 								<li class='list-inline-item'><a href='#' class='menu_item'>CHAT</a></li>
 								<li class='list-inline-item'><a href='#' class='menu_item'>PREORDER</a></li>
-								<li class='list-inline-item'><a href='#about' class='menu_item'>ABOUT US</a></li>
+								<li class='list-inline-item'><a href='#' class='menu_item scroll-to-post'>ABOUT US</a></li>
 								<li class='list-inline-item'><a href='#' class='menu_item'><i class='fa fa-facebook'></i></a></li>
 								<li class='list-inline-item'><a href='#' class='menu_item'><i class='fa fa-instagram'></i></a></li>
 								<li class='list-inline-item'><a href='#' class='menu_item'><i class='fa fa-twitter'></i></a></li>
@@ -371,6 +546,7 @@
 					</div>
 				</div>
 			</div>
+			<div class='first_content_after'></div>
 		</div>
 		<div class='second_content' id='about'>
 				<div class='second_container'>
@@ -430,18 +606,71 @@
 							<p>We will love to add you to our customer database, and keep you updated on our weekly posts and new products</p>
 							<ul class='list-inline'>
 								<li class='list-inline-item'><input type='email' class='content_input_box' placeholder='Email address' /></li>
-								<li class='list-inline-item'><a href='#'><button class='btn'>SUBSCRIBE</button></a></li>
+								<li class='list-inline-item'><a href='#'><button class='btn content_button2'>SUBSCRIBE</button></a></li>
 							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		<a id="back-to-top" href="#" class="back-to-top" role="button">
+			<i class='fa fa-chevron-up'></i>
+		</a>
 		<footer class='footer'>
 			<span>&copy; Copyright FitsByDee 2018</span>
 		</footer>
 	</main>
 	<script src='jquery.js'></script>
 	<script src='js/bootstrap.js'></script>
+	<script type='text/javascript'>
+		var content = 'Welcome, We are FitsByDee';
+
+		var mess1 = function() {
+			let textElements = content.split("").map(function(c) {
+				return $('<span id="' + c + '">' + c + '</span>');
+				});
+
+				var el = $('.first_content_after');
+				var delay = 200; // Tune this for different letter delays.
+				textElements.forEach(function(e, i) {
+				el.append(e);
+				e.hide();
+				setTimeout(function() {
+					e.fadeIn(300)
+				}, 100 + i * delay)
+				});
+		};
+
+
+		mess1();
+
+		$(function () {
+			$('.scroll-to-post').click(function () {
+				$('html, body').animate({ scrollTop: $('.second_content').offset().top }, 'slow');
+				return false;
+			});
+			});
+
+		/* Scroll to top */
+		$(document).ready(function () {
+			// scroll body to 0px on click
+			$('#back-to-top').click(function () {
+			$('body,html').animate({
+				scrollTop: 0
+			}, 800);
+			return false;
+			});
+
+			$(window).scroll(function () {
+			if ($(this).scrollTop() > 100) {
+				$('#back-to-top').fadeIn();
+			} else {
+				$('#back-to-top').fadeOut();
+			}
+			});
+		});
+	</script>
+	
+	<script src='jquery.js'></script>
 </body>
 </html>
